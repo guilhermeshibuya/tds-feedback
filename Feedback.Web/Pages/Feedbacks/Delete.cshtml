@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model Feedback.Web.Pages.Feedbacks.DeleteModel
+
+<div class="container">
+    <h1>Detalhes do Feedback para Remover</h1>
+
+    <div class="feedback__remove">
+        <p>
+            <strong>Nome:</strong>
+            @Model.Feedback.NomeCliente
+        </p>
+        <p>
+            <strong>Email:</strong>
+            @Model.Feedback.EmailCliente
+        </p>
+        <p>
+            <strong>Data:</strong>
+            @Model.Feedback.DataFeedback
+        </p>
+        <p>
+            <strong>Comentário:</strong>
+            @Model.Feedback.Comentario
+        </p>
+        <p>
+            <strong>Avaliação:</strong>
+            @Model.Feedback.Avaliacao
+        </p>
+    </div>
+
+    <form method="post">
+        <div class="form-group">
+            <input type="submit" value="Excluir" class="btn-danger" />
+            <a asp-page="/Feedbacks/Index" class="btn-primary">Voltar</a>
+        </div>
+    </form>
+</div>
+
+

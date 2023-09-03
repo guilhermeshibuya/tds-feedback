@@ -1,0 +1,41 @@
+﻿@page
+@model Feedback.Web.Pages.Feedbacks.IndexModel
+
+<div class="container feedback__index">
+    <a asp-page="/Feedbacks/Create" class="btn-primary">Criar feedback</a>
+
+    <table>
+        <thead class="thead">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FeedbackList[0].IdFeedback)</th>
+                <th>@Html.DisplayNameFor(model => model.FeedbackList[0].NomeCliente)</th>
+                <th>@Html.DisplayNameFor(model => model.FeedbackList[0].EmailCliente)</th>
+                <th>@Html.DisplayNameFor(model => model.FeedbackList[0].Comentario)</th>
+                <th>@Html.DisplayNameFor(model => model.FeedbackList[0].Avaliacao)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var feedbackModel in Model.FeedbackList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => feedbackModel.IdFeedback)</td>
+                    <td>@Html.DisplayFor(model => feedbackModel.NomeCliente)</td>
+                    <td>@Html.DisplayFor(model => feedbackModel.EmailCliente)</td>
+                    <td>@Html.DisplayFor(model => feedbackModel.Comentario)</td>
+                    <td>@Html.DisplayFor(model => feedbackModel.Avaliacao)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@feedbackModel.IdFeedback">
+                            Editar
+                        </a>
+                        <a asp-page="./Details" asp-route-id="@feedbackModel.IdFeedback">
+                            Visualizar
+                        </a>
+                        <a asp-page="./Delete" asp-route-id="@feedbackModel.IdFeedback">
+                            Remover
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

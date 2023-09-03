@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model Feedback.Web.Pages.Feedbacks.EditModel
+
+<h1>Editar Feedback</h1>
+<div class="">
+    <form method="post" class="form">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="Feedback.IdFeedback" />
+        <div class="form-group">
+            <label asp-for="Feedback.NomeCliente"></label>
+            <input asp-for="Feedback.NomeCliente" class="input" />
+            <span asp-validation-for="Feedback.NomeCliente" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Feedback.EmailCliente"></label>
+            <input asp-for="Feedback.EmailCliente" type="email" class="input" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Feedback.DataFeedback"></label>
+            <input asp-for="Feedback.DataFeedback" type="date" class="input" />
+            <span asp-validation-for="Feedback.DataFeedback" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Feedback.Comentario"></label>
+            <textarea asp-for="Feedback.Comentario" class="input"></textarea>
+            <span asp-validation-for="Feedback.Comentario" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Feedback.Avaliacao"></label>
+            <input asp-for="Feedback.Avaliacao" type="number" class="input" />
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" class="btn-primary" value="Salvar" />
+            <a asp-page="/Feedbacks/Index" >Cancelar</a>
+        </div>
+    </form>
+</div>
